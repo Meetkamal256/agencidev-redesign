@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import ThemeToggle from "./_components/ThemeToggle";
+import ThemeToggle from "./_components/ThemeToggle/ThemeToggle";
 
 export default function Home() {
   return (
