@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import styles from "./preview-video.module.css";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoMdClose } from "react-icons/io";
+import { div } from "framer-motion/client";
 
 interface VideoItem {
   video: string;
@@ -34,62 +35,64 @@ const videoItems: VideoItem[] = [
 
 const VideosPage = () => {
   const [activeVideo, setActiveVideo] = useState<VideoItem | null>(null);
-
+  
   return (
-    <div className={styles.container}>
-      <div className={styles.grid}>
-        {videoItems.map((video, idx) => (
-          <div
-            key={idx}
-            className={styles.gridItem}
-            onClick={() => setActiveVideo(video)}
-          >
-            <video
-              src={video.video}
-              muted
-              loop
-              playsInline
-              className={styles.thumbnail}
-            />
-            <div className={styles.overlayText}>
-              <h3>{video.title}</h3>
-              <p>{video.description}</p>
+    <div className="container">
+      <div className={styles.previewContainer}>
+        <div className={styles.grid}>
+          {videoItems.map((video, idx) => (
+            <div
+              key={idx}
+              className={styles.gridItem}
+              onClick={() => setActiveVideo(video)}
+            >
+              <video
+                src={video.video}
+                muted
+                loop
+                playsInline
+                className={styles.thumbnail}
+              />
+              <div className={styles.overlayText}>
+                <h3>{video.title}</h3>
+                <p>{video.description}</p>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Fullscreen Video Overlay with animation */}
-      <AnimatePresence>
-        {activeVideo && (
-          <motion.div
-            className={styles.overlay}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setActiveVideo(null)}
-          >
-            <button
-              className={styles.closeButton}
+          ))}
+        </div>
+        
+        {/* Fullscreen Video Overlay with animation */}
+        <AnimatePresence>
+          {activeVideo && (
+            <motion.div
+              className={styles.overlay}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               onClick={() => setActiveVideo(null)}
             >
-              <IoMdClose size={28}  />
-            </button>
-            <motion.video
-              key={activeVideo.video}
-              src={activeVideo.video}
-              autoPlay
-              muted
-              controls
-              className={styles.fullscreenVideo}
-              initial={{ scale: 0.5 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.5 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
+              <button
+                className={styles.closeButton}
+                onClick={() => setActiveVideo(null)}
+              >
+                <IoMdClose size={28} />
+              </button>
+              <motion.video
+                key={activeVideo.video}
+                src={activeVideo.video}
+                autoPlay
+                muted
+                controls
+                className={styles.fullscreenVideo}
+                initial={{ scale: 0.5 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0.5 }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </div>
   );
 };
