@@ -45,12 +45,7 @@
   bottom: 15px;
   left: 15px;
   right: 15px;
-  background: rgba(
-    0,
-    0,
-    0,
-    0.5
-  ); 
+  background: rgba(0, 0, 0, 0.5);
   color: #fff;
   padding: 10px 12px;
   border-radius: 6px;
@@ -100,6 +95,26 @@
   transform: scale(1.02);
 }
 
+.closeButton {
+  position: absolute;
+  top: 15%;
+  right: 20%;
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px 12px;
+  border-radius: 6px;
+  z-index: 101;
+  transition: background 0.3s ease;
+}
+
+.closeButton:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
 /* ------------------ Responsive ------------------ */
 
 /* Large Tablets */
@@ -107,17 +122,22 @@
   .grid {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
-  
+
   .gridItem {
     height: 250px;
   }
-  
+
   .overlayText h3 {
     font-size: 1rem;
   }
   
   .overlayText p {
     font-size: 0.85rem;
+  }
+  
+  .closeButton {
+    top: 20%;
+    right: 10%;
   }
 }
 
@@ -167,5 +187,10 @@
   
   .overlayText p {
     font-size: 0.75rem;
+  }
+  
+  .closeButton {
+    top: 15%;
+    right: 5%;
   }
 }
