@@ -13,7 +13,7 @@ const About = () => {
         brand strategy. Solving the tension between conversion and design, we
         help take agencies and info-products to the next level.
       </p>
-
+      
       <div className={styles.aboutCards}>
         <div className={styles.card}>
           <h5>01</h5>
@@ -23,7 +23,7 @@ const About = () => {
             building AI clones to create unlimited talking head content systems
             through to AI DM setting solutions that have brought in over 24,000+
             leads within days, our work delights, converts, and scales based on
-            our clients' needs.
+            our clients needs.
           </p>
           <Link
             href="https://gamma.app/docs/Agencidev-System-e21o5ggwvuohwq6"
@@ -43,7 +43,7 @@ const About = () => {
           </p>
         </div>
       </div>
-
+      
       <div className={styles.gridCards}>
         {[
           "/about-1.avif",

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
-import ThemeToggle from "./_components/ThemeToggle/ThemeToggle";
 import Navbar from "./_components/section/Navbar/Navbar";
 
 export const metadata: Metadata = {
