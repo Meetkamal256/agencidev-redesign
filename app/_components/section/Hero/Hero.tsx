@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import styles from "./hero.module.css";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -31,34 +32,39 @@ const Hero = () => {
         "From AI interfaces to agents to funnels to content strategy to creative direction to SaaS development to logo design, we build solutions for the future.",
     },
   ];
-  
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [videoLoaded, setVideoLoaded] = useState(false);
-  
+
   // Auto-slide every 10 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % slides.length);
     }, 10000);
-    
+
     return () => clearInterval(interval);
   }, [slides.length]);
-  
+
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
     setVideoLoaded(false);
   };
-  
+
   const handleNext = () => {
     setCurrentIndex((prev) => (prev + 1) % slides.length);
     setVideoLoaded(false);
   };
-  
+
   const handleIndicatorClick = (index: number) => {
     setCurrentIndex(index);
     setVideoLoaded(false);
   };
-  
+
+  const router = useRouter();
+
+  const handleVideoClick = () => {
+    router.push("/preview-videos");
+  };
   return (
     <section className={styles.heroContainer}>
       {/* Left Column */}
@@ -69,14 +75,15 @@ const Hero = () => {
         </p>
         <button>Get Started</button>
       </div>
-      
+
       {/* Right Column: Video Carousel */}
       <div className={styles.heroVideo}>
         {/* Fallback background while video loads */}
         {!videoLoaded && <div className={styles.videoFallback}></div>}
-        
+
         <AnimatePresence mode="wait">
           <motion.video
+            onClick={handleVideoClick}
             key={currentIndex}
             src={slides[currentIndex].video}
             autoPlay
@@ -92,7 +99,7 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
           />
         </AnimatePresence>
-        
+
         {/* Overlay Content */}
         <AnimatePresence mode="wait">
           <motion.div
@@ -103,17 +110,21 @@ const Hero = () => {
             exit={{ opacity: 0, y: -30 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className={styles.overlayHeading}>{slides[currentIndex].title}</h2>
-            <p className={styles.overlaySubtext}>{slides[currentIndex].description}</p>
+            <h2 className={styles.overlayHeading}>
+              {slides[currentIndex].title}
+            </h2>
+            <p className={styles.overlaySubtext}>
+              {slides[currentIndex].description}
+            </p>
           </motion.div>
         </AnimatePresence>
-        
+
         {/* Slider Controls */}
         <div className={styles.controls}>
           <button onClick={handlePrev}>⟨</button>
           <button onClick={handleNext}>⟩</button>
         </div>
-        
+
         {/* Pagination Indicators */}
         <div className={styles.indicators}>
           {slides.map((_, idx) => (
