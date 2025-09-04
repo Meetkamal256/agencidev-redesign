@@ -62,7 +62,7 @@
   color: #000;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .navbarContainer {
     flex-direction: row;
     justify-content: space-between;
@@ -71,7 +71,7 @@
     padding: 0 15px;
     border-bottom: none;
   }
-
+  
   .navLinks {
     display: none;
     flex-direction: column;
@@ -86,20 +86,20 @@
     padding: 20px 0;
     border-top: 1px solid #ccc;
   }
-
+  
   .navLinks.mobileActive {
     display: flex;
   }
-
+  
   .hamburger {
     display: flex;
   }
-
+  
   .logoWrapper {
     height: 50px; /* small static logo */
     padding: 0;
   }
-
+  
   .scrolled + .navLinks {
     justify-content: center;
     margin: 0;

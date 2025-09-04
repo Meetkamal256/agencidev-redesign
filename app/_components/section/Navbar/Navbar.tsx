@@ -15,7 +15,7 @@ const Navbar = () => {
   // Detect desktop vs mobile
   useEffect(() => {
     const handleResize = () => {
-      setIsDesktop(window.innerWidth > 768);
+      setIsDesktop(window.innerWidth > 1200);
     };
     
     handleResize(); // initial check
