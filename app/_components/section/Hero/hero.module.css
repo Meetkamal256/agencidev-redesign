@@ -43,10 +43,9 @@
 }
 
 .heroContent button:hover {
-  background: var(--text);          
-  color: var(--background);         
+  background: var(--text);
+  color: var(--background);
 }
-
 
 /* Right Column */
 .heroVideo {
@@ -84,10 +83,12 @@
   top: 50%;
   left: 10%;
   transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
   color: white;
   text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
   max-width: 80%;
   z-index: 2;
+  padding: 20px;
 }
 
 .overlayHeading {
