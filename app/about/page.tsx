@@ -2,10 +2,12 @@ import Link from "next/link";
 import styles from "./about.module.css";
 import Image from "next/image";
 import Footer from "../_components/section/Footer/Footer";
+import Navbar from "../_components/section/Navbar/Navbar";
 
 const About = () => {
   return (
     <div className="container">
+      <Navbar />
       <h1 className={styles.sectionHeading}>
         The home of Future-Focused Design.
       </h1>

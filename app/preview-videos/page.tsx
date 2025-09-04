@@ -5,6 +5,7 @@ import styles from "./preview-video.module.css";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoMdClose } from "react-icons/io";
 import { div } from "framer-motion/client";
+import Navbar from "../_components/section/Navbar/Navbar";
 
 interface VideoItem {
   video: string;
@@ -38,6 +39,7 @@ const VideosPage = () => {
   
   return (
     <div className="container">
+      <Navbar />
       <div className={styles.previewContainer}>
         <div className={styles.grid}>
           {videoItems.map((video, idx) => (
