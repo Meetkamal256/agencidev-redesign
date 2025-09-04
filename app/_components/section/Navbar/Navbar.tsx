@@ -58,7 +58,7 @@ const Navbar = () => {
           />
         </Link>
       </div>
-
+      
       <ul
         className={`${styles.navLinks} ${
           mobileMenuOpen ? styles.mobileActive : ""
@@ -80,7 +80,7 @@ const Navbar = () => {
           <li onClick={() => setMobileMenuOpen(false)}>[Careers]</li>
         </Link>
         <Link href="/contact">
-          <li onClick={() => setMobileMenuOpen(false)}>[Portfolio]</li>
+          <li onClick={() => setMobileMenuOpen(false)}>[Contact]</li>
         </Link>
       </ul>
 
