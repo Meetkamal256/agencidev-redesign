@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "./about.module.css";
 import Image from "next/image";
+import Footer from "../_components/section/Footer/Footer";
 
 const About = () => {
   return (
@@ -13,7 +14,7 @@ const About = () => {
         brand strategy. Solving the tension between conversion and design, we
         help take agencies and info-products to the next level.
       </p>
-      
+
       <div className={styles.aboutCards}>
         <div className={styles.card}>
           <h5>01</h5>
@@ -43,7 +44,7 @@ const About = () => {
           </p>
         </div>
       </div>
-      
+
       <div className={styles.gridCards}>
         {[
           "/about-1.avif",
@@ -64,6 +65,8 @@ const About = () => {
           </div>
         ))}
       </div>
+
+      <Footer />
     </div>
   );
 };
