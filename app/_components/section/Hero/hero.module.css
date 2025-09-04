@@ -29,7 +29,6 @@
   line-height: 1.6;
   opacity: 0.85;
 }
-
 .heroContent button {
   width: max-content;
   padding: 0.8rem 2rem;
@@ -44,9 +43,10 @@
 }
 
 .heroContent button:hover {
-  background: var(--text);
-  color: var(--background);
+  background: var(--text);          
+  color: var(--background);         
 }
+
 
 /* Right Column */
 .heroVideo {
@@ -156,13 +156,13 @@
     flex-direction: column;
     margin-top: 0px;
   }
-  
+
   .heroContent {
     text-align: center;
     align-items: center;
     padding: 30px 20px;
   }
-  
+
   .overlayContent {
     left: 10%;
     transform: translate(-50%, -50%);
@@ -171,7 +171,7 @@
   .overlayHeading {
     font-size: clamp(1.5rem, 3vw, 2rem);
   }
-  
+
   .overlaySubtext {
     font-size: clamp(0.9rem, 2.5vw, 1.1rem);
   }
@@ -183,29 +183,29 @@
     flex-direction: column;
     margin-top: 100px;
   }
-  
+
   .heroContent {
     padding: 20px 15px;
   }
-  
+
   .heroContent h1 {
     font-size: 2rem;
   }
-  
+
   .heroContent p {
     font-size: 1rem;
   }
-  
+
   .heroContent button {
     padding: 0.6rem 1.5rem;
     font-size: 0.9rem;
   }
-  
+
   .heroVideo {
     width: 100%;
-    height: 60vh; 
+    height: 60vh;
   }
-  
+
   .overlayContent {
     top: 20%;
     left: 5%;
@@ -213,24 +213,24 @@
     max-width: 90%;
     font-size: 0.9rem;
   }
-  
+
   .overlayHeading {
     font-size: clamp(1.2rem, 4vw, 1.5rem);
   }
-  
+
   .overlaySubtext {
     font-size: clamp(0.8rem, 3.5vw, 1rem);
   }
-  
+
   .controls button {
     font-size: 16px;
     padding: 8px 12px;
   }
-  
+
   .indicators {
     gap: 6px;
   }
-  
+
   .indicator {
     width: 10px;
     height: 10px;
