@@ -47,3 +47,40 @@
   justify-content: flex-end;
   margin: 0 0px;
 }
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  margin-left: 20px;
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .navLinks {
+    display: none; 
+    flex-direction: column;
+    gap: 15px;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 20px 0;
+    border-top: 1px solid #ccc;
+  }
+  
+  .navLinks.mobileActive {
+    display: flex; 
+  }
+
+  .hamburger {
+    display: flex; 
+  }
+
+  .scrolled + .navLinks {
+    justify-content: center;
+    margin: 0;
+  }
+}

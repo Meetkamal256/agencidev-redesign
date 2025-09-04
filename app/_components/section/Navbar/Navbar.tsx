@@ -3,9 +3,11 @@ import React, { useState, useEffect } from "react";
 import styles from "./navbar.module.css";
 import Image from "next/image";
 import ThemeToggle from "../../ThemeToggle/ThemeToggle";
+import { CiMenuFries } from "react-icons/ci";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,16 +40,26 @@ const Navbar = () => {
         />
       </div>
       <div>
-        <ul className={styles.navLinks}>
-          <li>[Home]</li>
-          <li>[About]</li>
-          <li>[Portfolio]</li>
-          <li>[FAQ]</li>
-          <li>[Careers]</li>
-          <li>[Contact]</li>
+        <ul
+          className={`${styles.navLinks} ${
+            mobileMenuOpen ? styles.mobileActive : ""
+          }`}
+        >
+          <li onClick={() => setMobileMenuOpen(false)}>Home</li>
+          <li onClick={() => setMobileMenuOpen(false)}>About</li>
+          <li onClick={() => setMobileMenuOpen(false)}>Portfolio</li>
+          <li onClick={() => setMobileMenuOpen(false)}>FAQ</li>
+          <li onClick={() => setMobileMenuOpen(false)}>Careers</li>
+          <li onClick={() => setMobileMenuOpen(false)}>Contact</li>
         </ul>
       </div>
-        <ThemeToggle />
+      <ThemeToggle />
+      <div
+        className={styles.hamburger}
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+      >
+        <CiMenuFries size={28} />
+      </div>
     </div>
   );
 };
