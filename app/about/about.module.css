@@ -103,3 +103,75 @@
   transform: scale(1.05);
   transition: transform 0.4s ease;
 }
+
+
+@media (max-width: 1024px) {
+  .aboutCards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .gridCards {
+    grid-template-columns: 1fr; 
+    gap: 0.8rem;
+  }
+  
+  .container {
+    padding: 4rem 1.5rem;
+  }
+  
+  .sectionHeading {
+    font-size: 2.5rem;
+  }
+  
+  .sectionText {
+    font-size: 1.15rem;
+    max-width: 90%;
+  }
+  
+  .card h4 {
+    font-size: 1.5rem;
+  }
+  
+  .card h5 {
+    font-size: 1.1rem;
+  }
+  
+  .card p {
+    font-size: 0.95rem;
+  }
+}
+
+/* For screens 768px and below (mobile) */
+@media (max-width: 768px) {
+  .container {
+    padding: 3rem 1rem;
+  }
+  
+  .sectionHeading {
+    font-size: 2rem;
+  }
+  
+  .sectionText {
+    font-size: 1rem;
+    max-width: 95%;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+  
+  .card h4 {
+    font-size: 1.4rem;
+  }
+  
+  .card h5 {
+    font-size: 1rem;
+  }
+  
+  .card p {
+    font-size: 0.9rem;
+  }
+  
+ 
+}
