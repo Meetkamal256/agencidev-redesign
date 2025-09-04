@@ -7,7 +7,9 @@
   flex-direction: column;
   align-items: center;
   transition: all 0.3s ease;
-  background: white;
+  background-color: rgba(255, 255, 255, 1);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
 }
 
 .logoWrapper {
@@ -26,6 +28,16 @@
   transition: all 0.3s ease;
   color: #000;
   cursor: pointer;
+}
+
+.navLinks li {
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.navLinks li:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
 }
 
 /* Scrolled state */

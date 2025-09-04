@@ -4,6 +4,8 @@ import styles from "./navbar.module.css";
 import Image from "next/image";
 import ThemeToggle from "../../ThemeToggle/ThemeToggle";
 import { CiMenuFries } from "react-icons/ci";
+import { AnimatePresence, motion } from "framer-motion";
+import { IoMdClose, IoMdMenu } from "react-icons/io";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -29,11 +31,11 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isDesktop]);
-  
+
   return (
     <div
       className={`${styles.navbarContainer} ${
@@ -60,12 +62,12 @@ const Navbar = () => {
           mobileMenuOpen ? styles.mobileActive : ""
         }`}
       >
-        <li onClick={() => setMobileMenuOpen(false)}>Home</li>
-        <li onClick={() => setMobileMenuOpen(false)}>About</li>
-        <li onClick={() => setMobileMenuOpen(false)}>Portfolio</li>
-        <li onClick={() => setMobileMenuOpen(false)}>FAQ</li>
-        <li onClick={() => setMobileMenuOpen(false)}>Careers</li>
-        <li onClick={() => setMobileMenuOpen(false)}>Contact</li>
+        <li onClick={() => setMobileMenuOpen(false)}>[Home]</li>
+        <li onClick={() => setMobileMenuOpen(false)}>[About]</li>
+        <li onClick={() => setMobileMenuOpen(false)}>[Portfolio]</li>
+        <li onClick={() => setMobileMenuOpen(false)}>[FAQ]</li>
+        <li onClick={() => setMobileMenuOpen(false)}>[Careers]</li>
+        <li onClick={() => setMobileMenuOpen(false)}>[Contact]</li>
       </ul>
 
       <ThemeToggle />
@@ -74,7 +76,11 @@ const Navbar = () => {
         className={styles.hamburger}
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
       >
-        <CiMenuFries size={28} />
+        {mobileMenuOpen ? (
+          <IoMdClose size={28} />
+        ) : (
+          <CiMenuFries size={28} />
+        )}
       </div>
     </div>
   );
