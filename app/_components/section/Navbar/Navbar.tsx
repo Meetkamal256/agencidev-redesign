@@ -8,52 +8,68 @@ import { CiMenuFries } from "react-icons/ci";
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(true);
 
+  // Detect desktop vs mobile
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth > 768);
     };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
+    
+    handleResize(); // initial check
+    window.addEventListener("resize", handleResize);
+    
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
-
+  
+  // Scroll effect only on desktop
+  useEffect(() => {
+    if (!isDesktop) return;
+    
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isDesktop]);
+  
   return (
     <div
-      className={`${styles.navbarContainer} ${scrolled ? styles.scrolled : ""}`}
+      className={`${styles.navbarContainer} ${
+        scrolled && isDesktop ? styles.scrolled : ""
+      }`}
     >
       <div
-        className={`${styles.logoWrapper} ${scrolled ? styles.scrolled : ""}`}
+        className={`${styles.logoWrapper} ${
+          scrolled && isDesktop ? styles.scrolled : ""
+        }`}
       >
         <Image
           src="/agencydevLogo-2.png"
           alt="Agencidev Logo"
           layout="intrinsic"
-          width={scrolled ? 150 : 600}
-          height={scrolled ? 50 : 200}
+          width={isDesktop ? (scrolled ? 150 : 600) : 150}
+          height={isDesktop ? (scrolled ? 50 : 200) : 50}
           className={styles.logo}
         />
       </div>
-      <div>
-        <ul
-          className={`${styles.navLinks} ${
-            mobileMenuOpen ? styles.mobileActive : ""
-          }`}
-        >
-          <li onClick={() => setMobileMenuOpen(false)}>Home</li>
-          <li onClick={() => setMobileMenuOpen(false)}>About</li>
-          <li onClick={() => setMobileMenuOpen(false)}>Portfolio</li>
-          <li onClick={() => setMobileMenuOpen(false)}>FAQ</li>
-          <li onClick={() => setMobileMenuOpen(false)}>Careers</li>
-          <li onClick={() => setMobileMenuOpen(false)}>Contact</li>
-        </ul>
-      </div>
+
+      <ul
+        className={`${styles.navLinks} ${
+          mobileMenuOpen ? styles.mobileActive : ""
+        }`}
+      >
+        <li onClick={() => setMobileMenuOpen(false)}>Home</li>
+        <li onClick={() => setMobileMenuOpen(false)}>About</li>
+        <li onClick={() => setMobileMenuOpen(false)}>Portfolio</li>
+        <li onClick={() => setMobileMenuOpen(false)}>FAQ</li>
+        <li onClick={() => setMobileMenuOpen(false)}>Careers</li>
+        <li onClick={() => setMobileMenuOpen(false)}>Contact</li>
+      </ul>
+
       <ThemeToggle />
+
       <div
         className={styles.hamburger}
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
