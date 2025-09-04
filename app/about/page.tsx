@@ -13,7 +13,7 @@ const About = () => {
         brand strategy. Solving the tension between conversion and design, we
         help take agencies and info-products to the next level.
       </p>
-      
+
       <div className={styles.aboutCards}>
         <div className={styles.card}>
           <h5>01</h5>
@@ -43,11 +43,11 @@ const About = () => {
           </p>
         </div>
       </div>
-      
+
       <div className={styles.gridCards}>
         {[
           "/about-1.avif",
-          "/about-6.gif", 
+          "/about-6.gif",
           "/about-2.avif",
           "/about-3.avif",
           "/about-4.avif",
@@ -57,8 +57,9 @@ const About = () => {
             <Image
               src={src}
               alt={`About image ${i + 1}`}
-              width={400}
-              height={300}
+              fill
+              style={{ objectFit: "cover" }} // maintain aspect ratio and cover container
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </div>
         ))}
