@@ -44,7 +44,7 @@ const About = () => {
           </p>
         </div>
       </div>
-
+      
       <div className={styles.gridCards}>
         {[
           "/about-1.avif",
@@ -65,7 +65,7 @@ const About = () => {
           </div>
         ))}
       </div>
-
+      
       <Footer />
     </div>
   );

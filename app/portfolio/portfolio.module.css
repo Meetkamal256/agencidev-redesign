@@ -1,0 +1,91 @@
+.sectionHeading {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.sectionText {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  text-align: center;
+  color: var(--text);
+  opacity: 0.7;
+}
+
+.portfolioCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.portfolioCards > div {
+  position: relative; /* required for next/image fill */
+  width: 100%;
+  aspect-ratio: 16 / 10; /* maintains proportion */
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--background);
+  border: 1px solid var(--text);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.portfolioCards > div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Make sure images respect the border radius */
+.portfolioCards img {
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+.portfolioCards > div:hover img {
+  transform: scale(1.05);
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .sectionHeading {
+    font-size: 2.2rem;
+  }
+
+  .sectionText {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+  }
+
+  .portfolioCards {
+    gap: 1.2rem;
+    margin-top: 2.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .sectionHeading {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .sectionText {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .portfolioCards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .portfolioCards > div {
+    aspect-ratio: 4 / 3;
+  }
+}
