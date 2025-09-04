@@ -7,16 +7,16 @@ const page = () => {
   return (
     <div className="container">
       <h1 className={styles.sectionHeading}>
-        We're an AI product design & build agency.
+        We are an AI product design & build agency.
       </h1>
       <p className={styles.sectionText}>
         AI is shaping the future of business, driving innovation through
         personalised, purpose-built experiences. To succeed in this new era,
         agencies must go beyond utility and focus on creating companies that
-        resonate with their clients' deeper aspirations. Here is some of our
+        resonate with their clients deeper aspirations. Here is some of our
         work and ideas…
       </p>
-
+      
       <div className={styles.portfolioCards}>
         <div>
           <Link href="/birdhouseAi">
@@ -24,7 +24,7 @@ const page = () => {
               src="/birdhouseAI.avif"
               alt=""
               fill
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: "cover" }}    
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </Link>
