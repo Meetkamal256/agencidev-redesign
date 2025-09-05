@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./hero.module.css";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 interface Slide {
   video: string;
@@ -73,7 +74,13 @@ const Hero = () => {
         <p>
           Driving innovation with cutting-edge AI technology for your business.
         </p>
-        <button>Get Started</button>
+        <Link
+          href="https://tally.so/r/mZD1Az"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button>Get Started</button>
+        </Link>
       </div>
 
       {/* Right Column: Video Carousel */}

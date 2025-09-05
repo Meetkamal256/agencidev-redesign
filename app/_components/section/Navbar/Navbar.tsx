@@ -58,7 +58,7 @@ const Navbar = () => {
           />
         </Link>
       </div>
-      
+
       <ul
         className={`${styles.navLinks} ${
           mobileMenuOpen ? styles.mobileActive : ""
@@ -79,7 +79,7 @@ const Navbar = () => {
         <Link href="/careers">
           <li onClick={() => setMobileMenuOpen(false)}>[Careers]</li>
         </Link>
-        <Link href="/contact">
+        <Link href="https://tally.so/r/mZD1Az">
           <li onClick={() => setMobileMenuOpen(false)}>[Contact]</li>
         </Link>
       </ul>

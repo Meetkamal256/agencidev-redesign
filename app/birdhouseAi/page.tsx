@@ -1,6 +1,7 @@
 import React from "react";
 import BirdhouseNav from "../_components/birdhouseNav/BirdhouseNav";
-import styles from "./birdhouseAi.module.css";import Image from "next/image";
+import styles from "./birdhouseAi.module.css";
+import Image from "next/image";
 import Link from "next/link";
 
 const page = () => {
@@ -77,7 +78,7 @@ const page = () => {
             on 𝕏 that sell?
           </p>
         </div>
-        
+
         <div className={styles.birdShowcase}>
           <div className={styles.logoContainer}>
             <Image src="/birdboxLogo.png" alt="" width={50} height={50} />
@@ -88,7 +89,7 @@ const page = () => {
             where users can generate posts from ideas as well as remix content
             from other creators.
           </p>
-          
+
           <div className={styles.imageWrapper}>
             <Image
               src="/birdbox.avif"
@@ -99,7 +100,7 @@ const page = () => {
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
             />
           </div>
-          
+
           <div className={styles.grid}>
             <div className={styles.imageWrapper}>
               <Image
@@ -123,7 +124,7 @@ const page = () => {
               </p>
             </div>
           </div>
-          
+
           <div className={styles.grid}>
             <div>
               <h1 className={styles.sectionHeading}>Industry Watchlists</h1>
@@ -144,7 +145,7 @@ const page = () => {
               />
             </div>
           </div>
-          
+
           <h1 className={styles.sectionHeading}>Industry Watchlists</h1>
           <p className={styles.subText}>
             Users can create watchlists to keep an eye out for inspiration from
@@ -198,10 +199,14 @@ const page = () => {
           creative direction to SaaS development to logo design, we build
           solutions for the future. Our mission is to build great agencies.
         </p>
-        <Link href="https://tally.so/r/mZD1Az">
+        <Link
+          href="https://tally.so/r/mZD1Az"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <button className={styles.contactBtn}>Contact US</button>
         </Link>
-        
+
         <p className={styles.copyright}>© 2025 Agencidev Enterprises Ltd.</p>
       </section>
     </>

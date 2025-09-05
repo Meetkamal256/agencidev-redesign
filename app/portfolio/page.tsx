@@ -33,7 +33,7 @@ const page = () => {
         </div>
 
         <div>
-          <Link href="/systemGrown">
+          <Link href="">
             <Image
               src="/systemGrown.avif"
               alt=""
