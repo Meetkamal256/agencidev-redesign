@@ -2,6 +2,7 @@
 import styles from "./birdhouseNav.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 
 const Navbar = () => {
   return (
@@ -21,9 +22,10 @@ const Navbar = () => {
         </div>
         <ul>
           <Link href="/">
-            <li>AgenciDev</li>
+            <li className={styles.logo}>AgenciDev</li>
           </Link>
         </ul>
+        <ThemeToggle />
       </section>
     </>
   );
