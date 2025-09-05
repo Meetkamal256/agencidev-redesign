@@ -11,7 +11,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(true);
-  
+
   // Detect desktop vs mobile
   useEffect(() => {
     const handleResize = () => {
@@ -82,9 +82,8 @@ const Navbar = () => {
         <Link href="https://tally.so/r/mZD1Az">
           <li onClick={() => setMobileMenuOpen(false)}>[Contact]</li>
         </Link>
+        <ThemeToggle />
       </ul>
-
-      <ThemeToggle />
 
       <div
         className={styles.hamburger}
