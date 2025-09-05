@@ -1,0 +1,13 @@
+.toggleBtn {
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: var(--text);
+  font-size: 1.25rem;
+  transition: color 0.3s;
+}
+
+.icon {
+  color: #000;
+}
