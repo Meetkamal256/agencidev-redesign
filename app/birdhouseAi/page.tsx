@@ -16,7 +16,7 @@ const page = () => {
           <p className={styles.subText}>
             In our community ideation sessions, we explore how the latest trends
             can create out-of-the-box ideas for our favourite agencies. This
-            week, we&apos;re focusing on The Birdhouse. Let’s dive in.
+            week, we&apos;re focusing on The Birdhouse. Let&apos;s dive in.
           </p>
           <p className={styles.date}>By Agencidev | 2.05.2025</p>
 
@@ -66,7 +66,7 @@ const page = () => {
             className={styles.video}
           ></video>
 
-          <h3 className={styles.graphTitle}>02 AI'S COMPETETIVE EDGE</h3>
+          <h3 className={styles.graphTitle}>02 AI&apos;S COMPETETIVE EDGE</h3>
           <p className={styles.graphText}>
             Though general AI tools lack the creative ability to write viral
             content that sells, without expert prompting, AI has the competitive
@@ -77,7 +77,7 @@ const page = () => {
             on 𝕏 that sell?
           </p>
         </div>
-
+        
         <div className={styles.birdShowcase}>
           <div className={styles.logoContainer}>
             <Image src="/birdboxLogo.png" alt="" width={50} height={50} />
@@ -88,7 +88,7 @@ const page = () => {
             where users can generate posts from ideas as well as remix content
             from other creators.
           </p>
-
+          
           <div className={styles.imageWrapper}>
             <Image
               src="/birdbox.avif"
@@ -99,7 +99,7 @@ const page = () => {
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
             />
           </div>
-
+          
           <div className={styles.grid}>
             <div className={styles.imageWrapper}>
               <Image
