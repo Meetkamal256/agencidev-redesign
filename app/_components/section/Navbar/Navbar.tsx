@@ -82,9 +82,10 @@ const Navbar = () => {
         <Link href="https://tally.so/r/mZD1Az">
           <li onClick={() => setMobileMenuOpen(false)}>Contact</li>
         </Link>
+      <ThemeToggle />
+      
       </ul>
       
-      <ThemeToggle />
       
       <div
         className={styles.hamburger}
