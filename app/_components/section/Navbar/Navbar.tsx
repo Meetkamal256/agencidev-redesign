@@ -58,34 +58,34 @@ const Navbar = () => {
           />
         </Link>
       </div>
-
+      
       <ul
         className={`${styles.navLinks} ${
           mobileMenuOpen ? styles.mobileActive : ""
         }`}
       >
         <Link href="/">
-          <li onClick={() => setMobileMenuOpen(false)}>[Home]</li>
+          <li onClick={() => setMobileMenuOpen(false)}>Home</li>
         </Link>
         <Link href="/about">
-          <li onClick={() => setMobileMenuOpen(false)}>[About]</li>
+          <li onClick={() => setMobileMenuOpen(false)}>About</li>
         </Link>
         <Link href="/portfolio">
-          <li onClick={() => setMobileMenuOpen(false)}>[Portfolio]</li>
+          <li onClick={() => setMobileMenuOpen(false)}>Portfolio</li>
         </Link>
         <Link href="/faq">
-          <li onClick={() => setMobileMenuOpen(false)}>[FAQ]</li>
+          <li onClick={() => setMobileMenuOpen(false)}>FAQ</li>
         </Link>
         <Link href="/careers">
-          <li onClick={() => setMobileMenuOpen(false)}>[Careers]</li>
+          <li onClick={() => setMobileMenuOpen(false)}>Careers</li>
         </Link>
         <Link href="https://tally.so/r/mZD1Az">
-          <li onClick={() => setMobileMenuOpen(false)}>[Contact]</li>
+          <li onClick={() => setMobileMenuOpen(false)}>Contact</li>
         </Link>
       </ul>
-
+      
       <ThemeToggle />
-
+      
       <div
         className={styles.hamburger}
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
