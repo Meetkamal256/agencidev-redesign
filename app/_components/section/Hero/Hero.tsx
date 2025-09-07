@@ -55,14 +55,14 @@ const Hero = () => {
     setCurrentIndex((prev) => (prev + 1) % slides.length);
     setVideoLoaded(false);
   };
-  
+
   const handleIndicatorClick = (index: number) => {
     setCurrentIndex(index);
     setVideoLoaded(false);
   };
-  
+
   const router = useRouter();
-  
+
   const handleVideoClick = () => {
     router.push("/preview-videos");
   };
@@ -77,19 +77,22 @@ const Hero = () => {
           forefront of what&apos;s possible with a range of services - including
           strategy, content, recruitment, service delivery and AI.
         </p>
-        <Link
-          href="https://tally.so/r/mZD1Az"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <button>Get Started</button>
-        </Link>
+        <div>
+          <Link
+            href="https://tally.so/r/mZD1Az"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button>Get Started</button>
+          </Link>
+        </div>
+        
       </div>
       {/* Right Column: Video Carousel */}
       <div className={styles.heroVideo}>
         {/* Fallback background while video loads */}
         {!videoLoaded && <div className={styles.videoFallback}></div>}
-        
+
         <AnimatePresence mode="wait">
           <motion.video
             key={currentIndex}
@@ -108,7 +111,7 @@ const Hero = () => {
             onClick={handleVideoClick}
           />
         </AnimatePresence>
-        
+
         {/* Overlay Content */}
         <AnimatePresence mode="wait">
           <motion.div
@@ -128,13 +131,13 @@ const Hero = () => {
             </p>
           </motion.div>
         </AnimatePresence>
-        
+
         {/* Slider Controls */}
         <div className={styles.controls}>
           <button onClick={handlePrev}>⟨</button>
           <button onClick={handleNext}>⟩</button>
         </div>
-        
+
         {/* Pagination Indicators */}
         <div className={styles.indicators}>
           {slides.map((_, idx) => (
