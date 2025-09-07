@@ -82,15 +82,13 @@ const Hero = () => {
           <button>Get Started</button>
         </Link>
       </div>
-
       {/* Right Column: Video Carousel */}
-      <div className={styles.heroVideo}>
+      <div className={styles.heroVideo} onClick={handleVideoClick}>
         {/* Fallback background while video loads */}
         {!videoLoaded && <div className={styles.videoFallback}></div>}
 
         <AnimatePresence mode="wait">
           <motion.video
-            onClick={handleVideoClick}
             key={currentIndex}
             src={slides[currentIndex].video}
             autoPlay
