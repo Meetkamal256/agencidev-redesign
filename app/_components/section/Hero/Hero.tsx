@@ -55,14 +55,14 @@ const Hero = () => {
     setCurrentIndex((prev) => (prev + 1) % slides.length);
     setVideoLoaded(false);
   };
-
+  
   const handleIndicatorClick = (index: number) => {
     setCurrentIndex(index);
     setVideoLoaded(false);
   };
-
+  
   const router = useRouter();
-
+  
   const handleVideoClick = () => {
     router.push("/preview-videos");
   };
@@ -86,10 +86,10 @@ const Hero = () => {
         </Link>
       </div>
       {/* Right Column: Video Carousel */}
-      <div className={styles.heroVideo} onClick={handleVideoClick}>
+      <div className={styles.heroVideo}>
         {/* Fallback background while video loads */}
         {!videoLoaded && <div className={styles.videoFallback}></div>}
-
+        
         <AnimatePresence mode="wait">
           <motion.video
             key={currentIndex}
@@ -105,9 +105,10 @@ const Hero = () => {
             animate={{ opacity: videoLoaded ? 1 : 0 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.8 }}
+            onClick={handleVideoClick}
           />
         </AnimatePresence>
-
+        
         {/* Overlay Content */}
         <AnimatePresence mode="wait">
           <motion.div
@@ -117,6 +118,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -30 }}
             transition={{ duration: 0.8 }}
+            onClick={handleVideoClick}
           >
             <h2 className={styles.overlayHeading}>
               {slides[currentIndex].title}
@@ -126,13 +128,13 @@ const Hero = () => {
             </p>
           </motion.div>
         </AnimatePresence>
-
+        
         {/* Slider Controls */}
         <div className={styles.controls}>
           <button onClick={handlePrev}>⟨</button>
           <button onClick={handleNext}>⟩</button>
         </div>
-
+        
         {/* Pagination Indicators */}
         <div className={styles.indicators}>
           {slides.map((_, idx) => (
