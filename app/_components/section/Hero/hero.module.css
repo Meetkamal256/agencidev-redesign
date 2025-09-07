@@ -52,6 +52,7 @@
   flex: 1;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 
 /* Fallback background for video */
