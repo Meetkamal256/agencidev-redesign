@@ -72,7 +72,10 @@ const Hero = () => {
       <div className={styles.heroContent}>
         <h1>Agencidev: AI & Tech Solutions</h1>
         <p>
-          Driving innovation with cutting-edge AI technology for your business.
+          Keeping agencies at the forefront of what's possible. At Agencidev, we
+          seize this opportunity by keeping agencies at the forefront of what’s
+          possible with a range of services - including strategy, content,
+          recruitment, service delivery and AI.
         </p>
         <Link
           href="https://tally.so/r/mZD1Az"
